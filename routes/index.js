@@ -31,7 +31,7 @@ const items = [
         
     },{
         name:'Boeing 787 Etihad',
-        description:'Joli.',
+        description:'Le Boeing 787 refait peau neuve avec son nouveau partenaire Etihad, qui vient lui ajouter une touche visuelle bluffante qui vous fera découvrir les hauteurs du Burj Khalifa.',
         prix: 375,
         id: 3,
         src: 'images/etihad787.jpg',
@@ -39,7 +39,7 @@ const items = [
         nombre:0
     },{
         name:'Boeing 787 Continental',
-        description:'Joli',
+        description:'Vivez le Rêve américain, voyagez vers New York, la ville aux mille-et-une publicités ou encore Vegas, la référence du casino.',
         prix: 315,
         id: 4,
         src: 'images/787.jpg',
@@ -47,7 +47,7 @@ const items = [
         nombre:0
     },{
         name: 'Rafale M',
-        description: 'Joli',
+        description: 'Vous partez en guerre ? Laissez-vous tenter par cette version inédite du Rafale, dont les performances au combat ont atteint un niveau encore jamais égalé.',
         prix: 160,
         id: 5,
         src: 'images/rafale3.jpg',
