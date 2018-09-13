@@ -250,7 +250,7 @@
                                         <form class="form-signin">
                                             <input v-model="user.mail" type="email" id="inputEmail" class="form-control mb-3" placeholder="Email ">
                                             <input v-model="user.mdp" type="password" id="inputpassword" class="form-control mb-3" placeholder="Mot de passe">
-                                            <button v-on:click="login(), infosclient()" id="signin" class="btn btn-lg btn-primary btn-block" type="button">Connexion</button>
+                                            <button v-on:click="login(utilisateur), infosclient()" id="signin" class="btn btn-lg btn-primary btn-block" type="button">Connexion</button>
                                         </form>
                                     </div>
                                 </div>
@@ -275,12 +275,15 @@
                         </div>
                         
                         <div v-else>
-                            <h1>Infos Client</h1>
-                            <div class="infosclient">
+                            <div class="titre_info">
+                            <img class="image_info" src="images/infoclient.png"/>     
+                            <h1 >Vos informations</h1>
+                        </div>  
+                            <div class="info_info">
                                 <p><b>Nom : </b>{{ infos.nom }}</p>
                                 <p><b>Prénom : </b>{{ infos.prenom }}</p>
-                                <p><b>Adresse mail : </b>{{ infos.mail }}</p>
-                                <p><b>Adresse de facturation : </b>{{ infos.adresse }}</p>
+                                <p><b>E-mail : </b>{{ infos.mail }}</p>
+                                <p><b>Domicile : </b>{{ infos.adresse }}</p>
                                 <p><b>Ville : </b>{{ infos.ville }}</p>
                             </div>
                         </div>
@@ -324,7 +327,6 @@
                         
                     </section>
                     
-                    <!-- v-if="utilisateur.mail != '' & item.quantity = 0" -->
                     
                     
                     <!-- ////////////////////////////////////////////////////// CONFIRMATION //////////////////////////////////////////////////// -->
@@ -466,15 +468,15 @@
                                 
                                 
                                 
-                                login: function() {
+                                login: function(utilisateur) {
                                     this.$http.post('/users', {
                                         mail: this.user.mail,
-                                        mdp: this.user.mdp
+                                        mdp: this.user.mdp,
                                     })
                                     .then((response) => {
                                         if (response.data === 'OK') {
                                             console.log('ok');
-                                            alert("Vous êtes maintenant connectés")
+                                            alert("Vous êtes maintenant connecté")
                                             this.utilisateur.mail = this.user.mail
                                             this.currentPage = 'panier'
                                         } else {
